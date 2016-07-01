@@ -40,6 +40,7 @@ place following facades in config/app.php folder under aliases array.
 ```bash
 	'SSE' => 'manfal\sse\SSEFacade',
 	'SSEEvent' => 'manfal\sse\SSEEventFacade'
+	'SSEData' => 'manfal\sse\SSEDataFacade'
 ```
 
 Usage
@@ -75,10 +76,11 @@ $>	php artisan make:controller SSEDemoController
 		use App\Http\Requests;
 		use App\Http\Controllers\Controller;
 		use SSEEvent;
+		use SSEData;
 		use SSE;
 
 		class TimeEvent extends SSEEvent {
-		    public function update(){
+		    public function update($event){
 		        return date('l, F jS, Y, h:i:s A');
 		    }
 		}

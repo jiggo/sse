@@ -16,7 +16,7 @@ class SSEEvent {
 		return true;
 	}
 	
-	public function update(){
+	public function update($event){
 		//returns nothing
 		return '';
 	}

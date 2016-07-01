@@ -120,7 +120,7 @@ class SSE {
 			//start to check for updates
 			foreach($this->_handlers as $event=>$handler){
 				if($handler->check()){//check if the data is avaliable
-					$data = $handler->update();//get the data
+					$data = $handler->update($event);//get the data
 					$this->id++;
 					SSEUtils::sseBlock($this->id,$event,$data);
 					//make sure the data has been sent to the client
